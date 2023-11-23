@@ -1,0 +1,5 @@
+<h2> <%= @organisation.name %> </h2>
+<%= link_to "View Shifts"%>
+<%= link_to "Edit", edit_organisation_path(:id => @organisation.id) %>
+<%= link_to "Leave",leave_organisation_path(:id => @organisation.id), data: { "turbo-method": :put } %>
+

@@ -1,0 +1,40 @@
+<h1>Sign Up</h1>
+<%= form_with model: @user do |f| %>
+  <% if @user.errors.any? %>
+    <div>
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class= "mb-3">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class:"form-control", placeholder:"Alex" %> 
+  </div>
+  <br>
+   <div class= "mb-3">
+    <%= f.label :email, class:"form-control", placeholder:"Alex@gmail.com" %><br>
+    <%= f.text_field :email %>
+  </div>
+  <br>
+  <div class= "mb-3">
+    <%= f.label :password, class:"form-control"%> (6 characters minimum) <br>
+    <%= f.password_field :password %>
+  </div>
+  <br>
+  <div class= "mb-3">
+    <%= f.label :password_confirmation, class:"form-control"%><br>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <br>
+  <p>
+    <%= f.submit %>
+  </p>
+
+  <p> 
+    <%= link_to 'Log In', new_session_path %><br>
+  </p>
+<% end %>

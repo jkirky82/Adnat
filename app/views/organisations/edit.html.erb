@@ -1,0 +1,15 @@
+<h1>Edit <% @organisation.name %></h1>
+
+ <%= form_with model: @organisation, url: organisation_path do |f| %>
+    <div>
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+    </div>
+    <div>
+        <%= f.label :hourly_rate %><br>
+        <%= f.number_field :hourly_rate %>
+    </div>
+    <p>
+        <%= f.submit 'Update' %>
+    </p>
+ <%end%>
